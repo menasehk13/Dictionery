@@ -16,9 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navHostController = findNavController(R.id.nav_controller)
-        bottom_nav=findViewById(R.id.bottomview)
+        bottom_nav = findViewById(R.id.bottomview)
         bottom_nav.setupWithNavController(navHostController)
-
     }
 
 }
