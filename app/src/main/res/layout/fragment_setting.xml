@@ -74,6 +74,7 @@
     <RelativeLayout
         android:paddingHorizontal="12dp"
         android:paddingVertical="18dp"
+        android:id="@+id/gamebutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView

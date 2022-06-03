@@ -2,6 +2,7 @@ package com.example.hadeyesedictionary
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.findNavController
@@ -18,6 +19,15 @@ class MainActivity : AppCompatActivity() {
         navHostController = findNavController(R.id.nav_controller)
         bottom_nav = findViewById(R.id.bottomview)
         bottom_nav.setupWithNavController(navHostController)
+        navHostController.addOnDestinationChangedListener{_
+            ,destination,_ ->
+            when(destination.id){
+                R.id.gameFragment->bottom_nav.visibility=View.INVISIBLE
+                R.id.gameModeFragment->bottom_nav.visibility=View.INVISIBLE
+                else-> bottom_nav.visibility=View.VISIBLE
+            }
+
+        }
     }
 
 }

@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.hadeyesedictionary.Fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_gameModeFragment"
+            app:destination="@id/gameModeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.example.hadeyesedictionary.Fragments.FavoriteFragment"
@@ -19,5 +23,28 @@
         android:id="@+id/settingFragment"
         android:name="com.example.hadeyesedictionary.Fragments.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_gameModeFragment"
+            app:destination="@id/gameModeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameModeFragment"
+        android:name="com.example.hadeyesedictionary.Fragments.GameModeFragment"
+        android:label="fragment_game_mode"
+        tools:layout="@layout/fragment_game_mode" >
+        <action
+            android:id="@+id/action_gameModeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.hadeyesedictionary.Fragments.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <argument
+            android:name="mode"
+            app:argType="string"
+            android:defaultValue="easy" />
+    </fragment>
 </navigation>

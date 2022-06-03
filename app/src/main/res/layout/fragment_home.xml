@@ -9,13 +9,27 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="110sp">
-        <Toolbar
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:title="Home"
-            >
+            android:weightSum="3"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <Toolbar
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/home">
+            </Toolbar>
+            <ImageButton
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:src="@drawable/ic_baseline_gamepad_24"
+                />        </LinearLayout>
 
-        </Toolbar>
         <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="40sp"
@@ -23,11 +37,11 @@
             android:paddingHorizontal="20dp"
             android:layout_marginEnd="50dp"
             android:layout_marginStart="12dp"
+            android:id="@+id/search_view"
             app:defaultQueryHint="@string/app_name"
             app:queryHint="Search here"
             app:iconifiedByDefault="false"
             />
-
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

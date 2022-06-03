@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hadeyesedictionary.Model.HomeData
 import com.example.hadeyesedictionary.R
 
-class HomeRecyleviewAdapter(val list:List<HomeData>):RecyclerView.Adapter<HomeRecyleviewAdapter.viewHolder>() {
+class HomeRecyleviewAdapter(var list:List<HomeData>):RecyclerView.Adapter<HomeRecyleviewAdapter.viewHolder>() {
 
 
     override fun onCreateViewHolder(
@@ -17,6 +17,12 @@ class HomeRecyleviewAdapter(val list:List<HomeData>):RecyclerView.Adapter<HomeRe
     ): HomeRecyleviewAdapter.viewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.custom_class_home,parent,false)
         return  viewHolder(view)
+    }
+
+    fun fliteredList(filterd:List<HomeData>){
+        list = filterd
+
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: HomeRecyleviewAdapter.viewHolder, position: Int) {
