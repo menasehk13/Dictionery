@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:paddingHorizontal="22dp"
-        android:id="@+id/resetTexts"
+        android:id="@+id/resetgame"
         android:text="New Game"
         android:textSize="18sp"
         />

@@ -26,8 +26,8 @@ class HomeRecyleviewAdapter(var list:List<HomeData>):RecyclerView.Adapter<HomeRe
     }
 
     override fun onBindViewHolder(holder: HomeRecyleviewAdapter.viewHolder, position: Int) {
-        holder.nameview.text = list[position].name
-        holder.disc.text = list[position].discription
+        holder.nameview.text = list[position].Haddiyisaa
+        holder.disc.text = list[position].amharic
     }
 
     override fun getItemCount(): Int {
