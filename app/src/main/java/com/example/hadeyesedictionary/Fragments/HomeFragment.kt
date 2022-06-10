@@ -110,8 +110,11 @@ class HomeFragment : Fragment() {
        for (items in DataRecyle){
            if (items.Haddiyisaa.lowercase().contains(newText!!.lowercase())){
                filteredList.add(items)
-           }
-           if (filteredList.isEmpty()){
+           }else if(items.amharic.contains(newText)){
+               filteredList.add(items)
+           }else if(items.english.lowercase().contains(newText.lowercase())){
+               filteredList.add(items)
+           }else if (filteredList.isEmpty()){
                Log.d("TAG", "filter: not searched yet ")
            }else{
                homeRecyleviewAdapter.fliteredList(filteredList)
