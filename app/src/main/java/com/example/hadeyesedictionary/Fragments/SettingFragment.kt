@@ -25,7 +25,7 @@ lateinit var gameButton:RelativeLayout
         super.onViewCreated(view, savedInstanceState)
         initView(view)
         gameButton.setOnClickListener(){
-            it.findNavController().navigate(R.id.action_settingFragment_to_gameModeFragment)
+            it.findNavController().navigate(R.id.action_settingFragment_to_gameFragment)
         }
     }
 

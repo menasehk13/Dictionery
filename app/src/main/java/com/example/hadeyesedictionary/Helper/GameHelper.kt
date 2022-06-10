@@ -15,9 +15,7 @@ import java.util.*
 class GameHelper(var  context: Context) {
      var words = ArrayList<String>()
     var random= Random()
-    val checking = arrayOf(
-      "Kina","Mine"
-    )
+
 
     @Throws(IOException::class)
     private fun readJSONDataFromFile(): String? {
@@ -55,7 +53,7 @@ class GameHelper(var  context: Context) {
 
     // random letters from one of the array lists
     fun randomWord(): String? {
-        return checking[random.nextInt(checking.count())]
+        return words[random.nextInt(words.count())]
     }
     // shuffle the correct answer from the array words
     fun correctAnswer(word:String):String{

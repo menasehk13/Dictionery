@@ -9,6 +9,11 @@
     android:layout_gravity="center"
     tools:context=".Fragments.GameFragment">
 
+<ImageView
+    android:layout_width="330dp"
+    android:layout_height="230dp"
+    android:background="@android:color/transparent"
+    android:src="@drawable/download"/>
  <TextView
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"

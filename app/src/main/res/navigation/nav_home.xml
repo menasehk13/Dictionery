@@ -11,8 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_gameModeFragment"
-            app:destination="@id/gameModeFragment" />
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -25,16 +25,7 @@
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" >
         <action
-            android:id="@+id/action_settingFragment_to_gameModeFragment"
-            app:destination="@id/gameModeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/gameModeFragment"
-        android:name="com.example.hadeyesedictionary.Fragments.GameModeFragment"
-        android:label="fragment_game_mode"
-        tools:layout="@layout/fragment_game_mode" >
-        <action
-            android:id="@+id/action_gameModeFragment_to_gameFragment"
+            android:id="@+id/action_settingFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
     </fragment>
     <fragment

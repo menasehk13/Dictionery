@@ -15,7 +15,6 @@ import com.google.android.material.textfield.TextInputLayout
 
 
 class GameFragment : Fragment() {
-  private val args: GameFragmentArgs by navArgs()
     lateinit var textword:TextView
     lateinit var inputText:TextInputLayout
     lateinit var gameHelper: GameHelper
@@ -44,17 +43,6 @@ class GameFragment : Fragment() {
             newGame()
         }
 
-        when (args.mode) {
-            "easy" -> {
-                Toast.makeText(requireActivity(), "EASY", Toast.LENGTH_SHORT).show()
-            }
-            "hard" -> {
-                Toast.makeText(requireActivity(), "Hard", Toast.LENGTH_SHORT).show()
-            }
-            else -> {
-                Toast.makeText(requireActivity(), "someError Occured", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     private fun validateanswer() {
@@ -67,7 +55,7 @@ class GameFragment : Fragment() {
             ).show()
             newGame()
         } else {
-            Toast.makeText(requireContext(), "Retry !", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Wrong Answer Retry Again!", Toast.LENGTH_SHORT).show()
         }
     }
 

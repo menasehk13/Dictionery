@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
             ,destination,_ ->
             when(destination.id){
                 R.id.gameFragment->bottom_nav.visibility=View.INVISIBLE
-                R.id.gameModeFragment->bottom_nav.visibility=View.INVISIBLE
                 else-> bottom_nav.visibility=View.VISIBLE
             }
 

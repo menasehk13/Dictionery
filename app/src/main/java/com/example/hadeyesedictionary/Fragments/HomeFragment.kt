@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hadeyesedictionary.Adapters.HomeRecyleviewAdapter
@@ -24,6 +26,7 @@ class HomeFragment : Fragment() {
         lateinit var homeRecyleviewAdapter: HomeRecyleviewAdapter
         lateinit var recyclerView: RecyclerView
         lateinit var searchView: SearchView
+        lateinit var Hometogame:ImageButton
          var DataRecyle:ArrayList<HomeData> = ArrayList<HomeData>()
 
 
@@ -39,11 +42,15 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         searchView = view.findViewById(com.example.hadeyesedictionary.R.id.search_view)
         recyclerView = view.findViewById(com.example.hadeyesedictionary.R.id.home_recyle)
+        Hometogame=view.findViewById(R.id.homeToGame)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
         recyclerView.hasFixedSize()
-        homeRecyleviewAdapter= HomeRecyleviewAdapter(DataRecyle)
+        homeRecyleviewAdapter= HomeRecyleviewAdapter(requireContext(),DataRecyle)
         recyclerView.adapter= homeRecyleviewAdapter
         addItemsFromJSON()
+        Hometogame.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
+        }
         searchView.setOnQueryTextListener(object :SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
